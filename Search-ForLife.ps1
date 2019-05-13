@@ -15,7 +15,7 @@ param()
 
 $MyEAP = "Continue"
 $ErrorActionPreference = $MyEAP
-$AliveFile = "$Env:SystemDrive:\Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_$Env:ComputerName.txt"
+$AliveFile = "$Env:SystemDrive\Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_$Env:ComputerName.txt"
 New-Item -Path (Split-Path -Path $AliveFile -Parent) -ItemType Directory -Force | Out-Null
 
 function Write-Log {

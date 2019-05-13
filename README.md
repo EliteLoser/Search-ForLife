@@ -41,7 +41,7 @@ PS C:\temp> gc C:\Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_DESKTOP-42.txt
 
 Here's the code where you can see what's logged about user logon events.
 
-```
+```powershell
 if ($LogonEvents.Count -gt 0) {
     Write-Log -Message "Found $($LogonEvents.Count) logon events since $(
         [DateTime]::Now.AddMinutes(-1440).ToString('yyyy-MM-dd HH:mm:ss')) (last 1440 minutes, 24 hours)."

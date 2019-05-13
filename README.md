@@ -12,6 +12,21 @@ I discovered something was accessing port 7680 on my home workstation when I was
 Here's my example in a non-elevated shell so you see the Get-EventLog error:
 
 ```
+PS C:\temp> C:\Users\sporr\OneDrive\Documents\PowerShell\Search-ForLife.ps1
+VERBOSE: 2019-05-13 02:13:53 # Starting Search-ForLife.ps1
+VERBOSE: 2019-05-13 02:13:53 # Logging to \Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_DESKTOP-42.txt
+VERBOSE: 2019-05-13 02:13:58 # [LOW_PORT_IN_USE] Port 7680 (low = below 10000) is in use by the following address(es): 192.168.0.29. DNS: .
+Get-EventLog : Requested registry access is not allowed.
+At C:\Users\sporr\OneDrive\Documents\PowerShell\Search-ForLife.ps1:102 char:26
++ ... nEvents = @(Get-EventLog -LogName Security -After ([DateTime]::Now.Ad ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-EventLog], SecurityException
+    + FullyQualifiedErrorId : System.Security.SecurityException,Microsoft.PowerShell.Commands.GetEventLogCommand
+ 
+VERBOSE: 2019-05-13 02:13:58 # [LOW_PORT_IN_USE] Port 7680 (low = below 10000) is in use by the following address(es): 192.168.0.29. DNS: .
+VERBOSE: 2019-05-13 02:14:03 # [LOW_PORT_IN_USE] Port 7680 (low = below 10000) is in use by the following address(es): 192.168.0.29. DNS: .
+
+
 PS C:\temp> gc C:\Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_DESKTOP-42.txt
 2019-05-13 02:13:53 # Starting Search-ForLife.ps1
 2019-05-13 02:13:53 # Logging to \Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_DESKTOP-42.txt

@@ -42,14 +42,14 @@ PS C:\temp> gc C:\Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_DESKTOP-42.txt
 Here's the code where you can see what's logged about user logon events.
 
 ```
-        if ($LogonEvents.Count -gt 0) {
-            Write-Log -Message "Found $($LogonEvents.Count) logon events since $(
-                [DateTime]::Now.AddMinutes(-1440).ToString('yyyy-MM-dd HH:mm:ss')) (last 1440 minutes, 24 hours)."
-            foreach ($Event in $LogonEvents) {
-                Write-Log -Message "[USER_LOGON] Account: $($Event.ReplacementStrings[5]). Domain: $(
-                    $Event.ReplacementStrings[6]). SID: $($Event.ReplacementStrings[4]). Remote endpoint: $(
-                    $Event.ReplacementStrings[18])."
-            }
-        }
+if ($LogonEvents.Count -gt 0) {
+    Write-Log -Message "Found $($LogonEvents.Count) logon events since $(
+        [DateTime]::Now.AddMinutes(-1440).ToString('yyyy-MM-dd HH:mm:ss')) (last 1440 minutes, 24 hours)."
+    foreach ($Event in $LogonEvents) {
+        Write-Log -Message "[USER_LOGON] Account: $($Event.ReplacementStrings[5]). Domain: $(
+            $Event.ReplacementStrings[6]). SID: $($Event.ReplacementStrings[4]). Remote endpoint: $(
+            $Event.ReplacementStrings[18])."
+    }
+}
 ```
 

@@ -1,6 +1,8 @@
 # Search-ForLife
 Use Svendsen Tech's Search-ForLife PowerShell code in an attempt to detect if a server is in use, as part of server lifecycle management/removal/investigation of unknown servers, etc.
 
+You start it once and then just let it run, preferably for a few days or weeks. I suggest at least one week, depending on a lot of factors I can't really base an estimate on... Starting it as a startup script that backgrounds it, or just in a scheduled task you only trigger once, are probably good approaches.
+
 It needs to run in an elevated administrator PowerShell shell to get access to the event log, but can scan ports without (you will then see regularly occuring error text).
 
 Only start it once and let it run "forever". It will log to `$Env:SystemDrive\Svendsen.Tech.Signs.of.Life\SignsOfLifeOn_$Env:ComputerName.txt`.
